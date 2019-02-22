@@ -5,7 +5,7 @@ const dateFormat = require('dateformat');
 const client = new Discord.Client(); 
 const jimp = require("jimp");
 const Canvas = require("canvas"); 
-const prefix = "#"
+const prefix = "&"
 const id = JSON.parse(fs.readFileSync("./id/rank.json", "utf8"));
 
 let banse = new Set();
@@ -1419,112 +1419,109 @@ client.on('message', message => {
 
 message.author.sendMessage(`
 **
-╭━━━╮╱╱╱╱╭━━╮╱╱╱╭╮
-┃╭━╮┃╱╱╱╱┃╭╮┃╱╱╭╯╰╮
-┃╰━╯┣━┳━━┫╰╯╰┳━┻╮╭╯
-┃╭━━┫╭┫╭╮┃╭━╮┃╭╮┃┃
-┃┃╱╱┃┃┃╰╯┃╰━╯┃╰╯┃╰╮
-╰╯╱╱╰╯╰━━┻━━━┻━━┻━╯
-
+ __     ____       ____        ___     _____
+|--|   |____|     |____|      /   \      |
+|  |   |          |     |     |   |      |
+|  |   |          |_____|     \___/      |
 [❖═════ لتشغيل اللوق Log يجب وجود روم باسم ═══════❖]
 
 [❖═════════════════════════════❖]
-        لماذا بروبوت ؟
-1- :rocket: سرعه اتصال ممتازه
-2- :beginner: سهل الاستخدام
-3- :warning: صيانه يوميه
-4- :money_with_wings: مجاني بالكامل
+        لماذا اب بوت ؟
+1- :rocket: سرعه  و جيد و سهل الاستعمل
+2- :beginner: سهل الاستخدام و جيد
+3- :warning:   نسعاء لى تطوير البوت
+4- :money_with_wings: يوجد رايم
 5- :shield: يحتوي على مانع اختراق سيرفرات للحفاظ على امان سيرفرك
 6- :musical_note: يحتوي على خاصيه ميوزك بجوده عاليه
 [❖═════════════════════════════❖]
 
 الاوامر العامة
 
-#id معلومات عن حسابك الشخصي
+&id معلومات عن حسابك الشخصي
 
-#server معلومات حول السيرفر
+&server معلومات حول السيرفر
 
-#move سحب عضو الى رومك الصوتي
+&move سحب عضو الى رومك الصوتي
 
-#clear مسح الرسائل الموجوده في الروم بعدد
+&clear مسح الرسائل الموجوده في الروم بعدد
 
-#avatar يعرض اك صورتك الشخصية
+&avatar يعرض اك صورتك الشخصية
 
-#image يعرض لك صورة السيرفر
+&image يعرض لك صورة السيرفر
 
-#credit يوريك كم الكريديت حقتك
+&credit يوريك كم الكريديت حقتك
 
-#daily يسوي لك سحب فلوس
+&daily يسوي لك سحب فلوس
 
-#rep يعطي ريب
+&rep يعطي ريب
 
-#rank يطلع لك نقاطك
+&rank يطلع لك نقاطك
 
-#profile معلومات عامة مع الصورة
+&profile معلومات عامة مع الصورة
 
 أوامر ادارة السيرفرات 
 
-#ban حضر عضو من السيرفر
+&ban حضر عضو من السيرفر
 
-#setwelcomer لتحديد روم الويلكم
+&setwelcomer لتحديد روم الويلكم
 
-#autorole لتشغيل الاوتو رول وتحديد الرتبه
+&autorole لتشغيل الاوتو رول وتحديد الرتبه
 
-#kick طرد عضو من السيرفر
+&kick طرد عضو من السيرفر
 
-#mute اعضاء ميوت كتابي لعضو في السيرفر
+&mute اعضاء ميوت كتابي لعضو في السيرفر
 
-#unmute فك الميوت عن عضو في السيرفر
+&unmute فك الميوت عن عضو في السيرفر
 
-#warn لتحذير شخص
+&warn لتحذير شخص
 
-#dac حذف جميع رومات السيرفر
+&dac حذف جميع رومات السيرفر
 
-#dar حذف جميع رتب السيرفر
+&dar حذف جميع رتب السيرفر
 
-#openroom فتح المحادثة في الروم
+&openroom فتح المحادثة في الروم
 
-#closeroom قفل المحادثة في الروم
+&closeroom قفل المحادثة في الروم
 
-#role اعطاء رتبه لشخض معين
+&role اعطاء رتبه لشخض معين
 
-#role humans اعطاء رتب للبشريين
+&role humans اعطاء رتب للبشريين
 
-#role bots اعطاء رتبه للبوتات
+&role bots اعطاء رتبه للبوتات
 
-#role all اعطاء رتبه للجميع سواء بشر او بوتات
+&role all اعطاء رتبه للجميع سواء بشر او بوتات
 
-#-role سحب الرتبه من شخص معين
+&-role سحب الرتبه من شخص معين
 
-#-role humans سحب رتبه من الميمبرز
+&-role humans سحب رتبه من الميمبرز
 
-#-role bots سحب رتبه للبوتات
+&-role bots سحب رتبه للبوتات
 
-#-role all سحب رتبه معينه من جميع الاعضاء سواء يوزرات او بوتات
+&-role all سحب رتبه معينه من جميع الاعضاء سواء يوزرات او بوتات
 
-#temp on تشغيل الرومات المؤقته
+&temp on تشغيل الرومات المؤقته
 
-#temp off اطفاء الرومات المؤقته
+&temp off اطفاء الرومات المؤقته
 
 اوامر الميوزك
 
-#play لتشغيل ميوزك
+&play لتشغيل ميوزك
 
-#stop لايقاف الميوزك
+&stop لايقاف الميوزك
 
-#skip لتخطي الميوزك
+&skip لتخطي الميوزك
 
-#queue لعرض قائمه الانتظار
+&queue لعرض قائمه الانتظار
 
-#vol لرفع صوت
+&vol لرفع صوت
 
 اخرى 
 
-#support رابط سيرفر الدعم الفني
+&support رابط سيرفر الدعم الفني
 
-#invite رابط اضافة البوت
+&invite رابط اضافة البوت
 
-#ping لمعرفه سرعه اتصال البوت
+&ping لمعرفه سرعه اتصال البوت
 
 **`);
 
@@ -1545,7 +1542,7 @@ if(message.content.startsWith(prefix  +  'warn'))  {
 .addField('**-  Reason:**',  `[${reason}]`,  true)
 .addField("**-  Warned  in:**",`[${message.channel.name}]`)
 .addField("**-  Time & Date:**",`[${message.createdAt}]`)
-.setFooter("Probot")
+.setFooter("AP BOT")
 .setColor('#060c37')
 let incidentchannel = message.guild.channels.find(`name`, "warns");
 if(!incidentchannel) return message.channel.send("Can't find warns channel.");
@@ -4692,9 +4689,9 @@ if (err) console.error(err)
 });
 })
 const sWlc = {}
-const premium = ['424134723716120578', '446629438558568458', '', '']
+const premium = ['515173684248444930', '446629438558568458', '', '']
 client.on('message', message => {
-var prefix = "#";
+var prefix = "&";
 if(message.channel.type === "dm") return;
 if(message.author.bot) return;
   if(!sWlc[message.guild.id]) sWlc[message.guild.id] = {
@@ -4788,12 +4785,12 @@ client.on("guildMemberAdd", member => {
 
     })
 
-    const devs = ['424134723716120578'];
+    const devs = ['515173684248444930'];
 
 client.on('message', message => {
     let argresult = message.content.split(` `).slice(1).join(' ');
     if (message.content.startsWith(prefix + 'setStreaming')) {
-      if (!devs.includes(message.author.id)) return message.channel.send("<@429972030092476437> only this guy can do restart the bot so don't try again :wink:.");
+      if (!devs.includes(message.author.id)) return message.channel.send("<@515173684248444930> only this guy can do restart the bot so don't try again :wink:.");
       message.delete();
       client.user.setGame(argresult, 'https://twitch.tv/DynastyShop');
 
