@@ -7,40 +7,7 @@ const jimp = require("jimp");
 const Canvas = require("canvas"); 
 const prefix = "&"
 const id = JSON.parse(fs.readFileSync("./id/rank.json", "utf8"));
-client.on('message', async message => {
 
-    let amount = 10000000000000000000000000000;
-
-    if(message.content.startsWith(prefix + "daily")) {
-
-    if(message.author.bot) return;
-
-    if(coolDown.has(message.author.id)) return message.channel.send(`**⏱ | ${message.author.username}, your daily 💴 credits refreshes in \`\`1 Day\`\`.**`);
-
-    
-
-    let userData = credits[message.author.id];
-
-    let m = userData.credits + amount;
-
-    credits[message.author.id] = {
-
-    credits: m
-
-    };
-
-
-    fs.writeFile("./creditsCode.json", JSON.stringify(userData.credits + amount), (err) => {
-
-    if (err) console.error(err);
-
-    });
-
-    
-
-    message.channel.send(`**🏧 | ${message.author.username}, you received your 💴 ${amount} credits!**`).then(() => {
-
-coolDown.add(message.author.id);
 
 let banse = new Set();
 client.on('guildBanAdd', function(guild) {
@@ -4847,7 +4814,40 @@ client.on('message', message => {
       } else if(message.content.startsWith(prefix + 'setStatus')) {
         if(!argresult) return message.channel.send('`online`, `DND(Do not Distrub),` `idle`, `invisible(Offline)` :notes: أختر أحد الحالات');
         client.user.setStatus(argresult);
+client.on('message', async message => {
 
+    let amount = 10000000000000000000000000000;
+
+    if(message.content.startsWith(prefix + "daily")) {
+
+    if(message.author.bot) return;
+
+    if(coolDown.has(message.author.id)) return message.channel.send(`**⏱ | ${message.author.username}, your daily 💴 credits refreshes in \`\`1 Day\`\`.**`);
+
+    
+
+    let userData = credits[message.author.id];
+
+    let m = userData.credits + amount;
+
+    credits[message.author.id] = {
+
+    credits: m
+
+    };
+
+
+    fs.writeFile("./creditsCode.json", JSON.stringify(userData.credits + amount), (err) => {
+
+    if (err) console.error(err);
+
+    });
+
+    
+
+    message.channel.send(`**🏧 | ${message.author.username}, you received your 💴 ${amount} credits!**`).then(() => {
+
+coolDown.add(message.author.id);
 
     }
 
